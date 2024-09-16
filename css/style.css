@@ -55,6 +55,10 @@ nav ul li a:hover {
 
 main {
     margin: 20px 0;
+
+}
+
+section{
     display: flex;
     justify-content: center;
 }
