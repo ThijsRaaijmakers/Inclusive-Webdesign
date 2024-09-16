@@ -58,7 +58,7 @@ main {
 
 }
 
-section{
+section {
     display: flex;
     justify-content: center;
 }
@@ -67,4 +67,9 @@ footer {
     text-align: center;
     margin-top: 20px;
     color: #555;
+}
+
+section div picture img {
+    max-width: 960px;
+    width: 100%;
 }
