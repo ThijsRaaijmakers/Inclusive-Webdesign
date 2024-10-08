@@ -20,13 +20,11 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
 header h1 {
     margin: 0;
     font-size: 2em;
     font-weight: bold;
 }
-
 /* Navbar styling */
 nav ul {
     list-style: none;
@@ -53,12 +51,84 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+a {
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #ffd500;
+}
+
+a.visited {
+    color: black;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 main {
     margin: 20px 0;
+
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.faq {
+    max-width: 860px;
+}
+
+.accordion {
+    background-color: #f4f4f4;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:after {
+    background-color: #ffd500;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    content: '+';
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+  
+.active:after {
+  content: "-";
+}
+  
+.panel {
+    padding: 0 18px;
+    background-color: #f4f4f4;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 footer {
     text-align: center;
     margin-top: 20px;
     color: #555;
+}
+
+section div picture img {
+    max-width: 960px;
+    width: 100%;
 }
