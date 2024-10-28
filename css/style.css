@@ -20,11 +20,13 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 header h1 {
     margin: 0;
     font-size: 2em;
     font-weight: bold;
 }
+
 /* Navbar styling */
 nav ul {
     list-style: none;
@@ -109,11 +111,11 @@ section {
     margin-left: 5px;
     margin-right: 5px;
 }
-  
+
 .active:after {
-  content: "-";
+    content: "-";
 }
-  
+
 .panel {
     padding: 0 18px;
     background-color: #f4f4f4;
@@ -126,4 +128,29 @@ footer {
     text-align: center;
     margin-top: 20px;
     color: #555;
+}
+
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr; 
+    align-items: center; 
+}
+.table h4 {
+    grid-column: span 3;
+    text-align: center;
+}
+.table h5 {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+/* EXPLAINN THIS MORE IN NORMAL TERMS AND WHY AND HOW -- STAN */
+.table-row {
+    display: contents; /* Allow each item to be part of the main grid */
+}
+.table-row div {
+    padding: 4px;
+    border: 1px solid #000000;
+    text-align: center;
 }
