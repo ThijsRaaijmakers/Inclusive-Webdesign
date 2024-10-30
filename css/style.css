@@ -163,6 +163,22 @@ footer {
     border-width: 1px;
     text-align: center;
     font-weight: normal;
+    min-height: 90px;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .table-row div {
+        min-height: 60px; 
+    }
+    
+}
+/* Desktop */
+@media screen and (min-width: 800px) {
+    .table-row div {
+        min-height: 20px; 
+    }
+    
 }
 
 .table-row div p {
@@ -173,6 +189,9 @@ footer {
     margin: 0; /* Remove any unintended margin */
 }
 
+.optional-course div{
+    background-color: aliceblue;
+}
 
 .study-structure-year {
     margin-top: 20px;
