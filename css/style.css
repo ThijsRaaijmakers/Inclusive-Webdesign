@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -79,6 +81,11 @@ section {
     display: flex;
     justify-content: center;
 }
+
+section > div {
+    width: 100%;
+}
+
 
 .faq {
     max-width: 860px;
@@ -166,20 +173,7 @@ footer {
     min-height: 90px;
 }
 
-/* Tablet */
-@media screen and (min-width: 768px) {
-    .table-row div {
-        min-height: 60px; 
-    }
-    
-}
-/* Desktop */
-@media screen and (min-width: 800px) {
-    .table-row div {
-        min-height: 20px; 
-    }
-    
-}
+
 
 .table-row div p {
     font-size: 1em; /* Adjust to desired size */
@@ -198,5 +192,25 @@ footer {
 }
 .subject-group {
     margin-top: 20px;
+}
+
+
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .table-row div {
+        min-height: 60px; 
+    }
+    
+}
+/* Desktop */
+@media screen and (min-width: 800px) {
+    .table-row div {
+        min-height: 20px; 
+    }
+    section > div {
+        width: 860px;
+    }
+    
 }
 
