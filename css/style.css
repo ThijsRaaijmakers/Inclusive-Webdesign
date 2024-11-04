@@ -132,3 +132,69 @@ section div picture img {
     max-width: 960px;
     width: 100%;
 }
+/* Specific style for the activity page */
+body.activity-page {
+    background-color: black; 
+    color: #fff; 
+}
+body.activity-page main {
+    max-width: 1080px; 
+    margin: 0 auto; 
+    padding: 2px; 
+    color: #f4f4f4;
+    background-color: black
+}
+
+/* inherits the same color to headings, paragraphs and links in the main area */
+body.activity-page main h1, 
+body.activity-page main h2, 
+body.activity-page main h3, 
+body.activity-page main p, 
+body.activity-page main a {
+    color: inherit;
+}
+
+body.activity-page header {
+    background-color: rgb(94, 138, 234);
+}
+
+body.activity-page ul {
+    list-style-type: none; /* delete bulletpoints */
+}
+
+body.activity-page main a {
+    text-decoration: underline; 
+    text-decoration-color: rgb(94, 138, 234); 
+}
+
+body.activity-page .image-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+body.activity-page .image-gallery img {
+    width: calc(33.333% - 20px); /* three pictures evenly next to each other */
+    height: auto; /* automatically adjust height based on image ratio */
+    max-height: 400px; /* set maximum height for portrait images */
+    object-fit: cover; /* image fills the entire width */
+    border-radius: 8px; /* round corners slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.activity-page .image-gallery img.portrait {
+    max-height: 400px; /* set maximum height for portrait images */
+    height: auto;
+}
+
+body.activity-page .image-gallery img.landscape {
+    max-height: 250px; /* set maximum height for landscape images */
+}
+
+
+
+
+
+
