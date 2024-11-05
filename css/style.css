@@ -195,6 +195,23 @@ body.activity-page .image-gallery img.landscape {
 body.activity-page .image-gallery img.portrait {
     height: 400px;
 }
+body.activity-page .map-container {
+    height: 400px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* map container */
+body.activity-page #map-offersøykammen,
+body.activity-page #map-djevelporten,
+body.activity-page #map-ryten {
+    height: 400px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 
 
 
