@@ -187,9 +187,10 @@ video {
 }
 
 /* EXPLAINN THIS MORE IN NORMAL TERMS AND WHY AND HOW -- STAN */
-.table-row {
+div[role="rowgroup"], .table-row {
     display: contents; /* Allow each item to be part of the main grid */
 }
+
 .table-row div {
     padding: 4px;
     border-color: black;
@@ -199,8 +200,6 @@ video {
     font-weight: normal;
     min-height: 90px;
 }
-
-
 
 .table-row div p {
     font-size: 1em; /* Adjust to desired size */
