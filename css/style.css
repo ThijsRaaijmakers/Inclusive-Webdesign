@@ -155,17 +155,18 @@ body.activity-page main a {
 }
 
 body.activity-page header {
-    background-color: rgb(94, 138, 234);
+    background-color: rgb(136, 223, 243);
 }
 
 body.activity-page ul {
     list-style-type: none; /* delete bulletpoints */
 }
 
-body.activity-page main a {
-    text-decoration: underline; 
-    text-decoration-color: rgb(94, 138, 234); 
-}
+    body.activity-page main a {
+        color: rgb(136, 223, 243); 
+        text-decoration: underline; 
+        text-decoration-color: rgb(136, 223, 243); 
+    }
 
 body.activity-page .image-gallery {
     display: flex;
