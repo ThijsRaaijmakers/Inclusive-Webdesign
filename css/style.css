@@ -307,3 +307,90 @@ div[role="rowgroup"], .table-row {
     }
     
 }
+/* Specific style for the activity page */
+body.activity-page {
+    background-color: black; 
+    color: #fff; 
+}
+body.activity-page main {
+    max-width: 1080px; 
+    margin: 0 auto; 
+    padding: 2px; 
+    color: #f4f4f4;
+    background-color: black
+}
+
+/* inherits the same color to headings, paragraphs and links in the main area */
+body.activity-page main h1, 
+body.activity-page main h2, 
+body.activity-page main h3, 
+body.activity-page main p, 
+body.activity-page main a {
+    color: inherit;
+}
+
+body.activity-page header {
+    background-color: rgb(136, 223, 243);
+}
+
+body.activity-page ul {
+    list-style-type: none; /* delete bulletpoints */
+}
+
+    body.activity-page main a {
+        color: rgb(136, 223, 243); 
+        text-decoration: underline; 
+        text-decoration-color: rgb(136, 223, 243); 
+    }
+
+body.activity-page .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+body.activity-page .image-gallery picture {
+    width: calc(33.333% - 20px); /* three images evenly next to each other */
+    max-width: 100%;
+}
+body.activity-page .image-gallery img {
+    width: 100%; /* Images fill the width of the container */
+    height: auto; /* automatically adjust height based on image ratio */
+    object-fit: cover; /* image fills the entire width */
+    border-radius: 8px; /* round corners slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.activity-page .image-gallery img.landscape {
+    height: 250px; 
+}
+
+body.activity-page .image-gallery img.portrait {
+    height: 400px;
+}
+body.activity-page .map-container {
+    height: 400px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* map container */
+body.activity-page #map-offersøykammen,
+body.activity-page #map-djevelporten,
+body.activity-page #map-ryten {
+    height: 400px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+

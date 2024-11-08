@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity - OsloMet</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- link to Leaflet CSS and JS -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet-GPX for displaying the GPX files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
 </head>
-<body>
+
+<body class="activity-page">
     <header>
-        <h1>Activity</h1>
+        <h1>Hiking Adventures</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -18,13 +24,185 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section>
             <!-- Content -->
-        </section>
+            <br><br>
+            <h2>Our Hiking Adventure in Lofoten</h2>
+            <p>Four international students, one passion: hiking. As outdoor enthusiasts, it was clear that our shared love for nature would lead us on a hiking adventure during our stay abroad. After much consideration, the <a href="https://visitlofoten.com/en/" target="_blank" arial-label="Official website of the Lofoten Islands">Lofoten</a> Islands emerged as the perfect destination, offering the rugged beauty and challenge we were all craving. Known for its dramatic mountain peaks, sweeping ocean views, and remote trails, Lofoten promised an unforgettable experience.</p>
+            <p>On September 25th, we packed our gear and set off to explore this stunning part of <a href="https://www.visitnorway.com/" target="_blank" arial-label="Official website of Visit Norway">Norway</a>. The combination of towering mountains, pristine landscapes, and breathtaking views made every step worthwhile, cementing Lofoten as a highlight of our stay in Norway.</p>
+            <br><br>
+            <h3>Hiking trails we explored</h3>
+            <p>From steep mountain trails to scenic costal walks, Lofoten has something for everyone. Our first hike took us to the stunning Offersøykammen. This trail, while short, offered amazing views over the surrounding fjords, with the peaks rising dramatically from the sea.</p>
+            <br>
+            <div class="image-gallery">
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/offersøykammen_view_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/offersøykammen_view_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/offersøykammen_view.jpeg" alt="View from Offersøykammen" class="landscape">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/offersøykammen_group_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/offersøykammen_group_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/offersøykammen_group.jpeg" alt="Group picture on Offersøykammen" class="landscape">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/offersøykammen_rainbow_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/offersøykammen_rainbow_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/offersøykammen_rainbow.jpeg" alt="Group picture on Offersøykammen" class="landscape">
+                </picture>
+            </div>
+            <br>
+            <div id="map-offersøykammen"></div>
+            <br>
+            <p>Our next adventure was the challenging but rewarding hike to Djevelporten and Fløya. The trail was steep, but reaching Djevelporten – a large rock suspended between two cliffs – was worth every step. From there, we continued to Fløya for a panoramic view of Svolvær and the surrounding islands.</p>
+            <br>
+            <div class="image-gallery">
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/djevelsporten_group_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/djevelsporten_group_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/djevelsporten_group.jpeg" alt="On Djevelporten" class="portrait">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/fløya_view_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/fløya_view_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/fløya_view.jpeg" alt="View from the top of Fløya" class="portrait">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/djevelsporten_hike_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/djevelsporten_hike_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/djevelsporten_hike.jpeg" alt="Hike to Djevelsproten" class="portrait">
+                </picture>
+            </div>
+            <br>
+            <div id="map-djevelporten"></div>
+            <br>
+            <p>One of the highlights was the hike to <a href="https://www.68north.com/lofoten-hikes/hiking-ryten/" target="_blank" aria-label="Hiking guide for Ryten in Lofoten">Ryten</a> The hike was relatively easy, and we were rewarded with a breathtaking view of a beautiful beach cove. To make the experience even more memorable, it started snowing while we were on top of the mountain.</p>
+            <br>
+            <div class="image-gallery">
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/ryten_kvalvika_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/ryten_kvalvika_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/ryten_kvalvika.jpeg" alt="View Kvalvika Beach" class="portrait">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/ryten_view_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/ryten_view_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/ryten_view.jpeg" alt="View from the top" class="portrait">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/ryten_snow_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/ryten_snow_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/ryten_snow.jpeg" alt="Ryten in the snowp" class="portrait">
+                </picture>
+            </div>
+            <br>
+            <div id="map-ryten"></div>
+            <br><br>
+            <h3>Recommended hikes in Lofoten</h3>
+            <p>If you're planning your own hiking trip in Lofoten, we highly recommend checking out this <a href="https://www.68north.com/lofoten-hikes/" target="_blank" arial-label="Comprehensive guide to the best hikes in Lofoten">guide</a> to the best hikes in Lofoten. It features detailed routes and tips for each trail.</p>
+            <br><br>
+            <h3>Fishing Villages in Lofoten</h3>
+            <p>Lofoten is not only known for its breathtaking hikes but also for its picturesque fishing villages. We visited the charming village of <a href="https://nordnorge.com/en/artikkel/nusfjord-in-lofoten-is-a-pearl-in-red-and-ochre/" target="_blank" aria-label="Learn more about the fishing village Nusfjord in Lofoten">Nusfjord</a>, where traditional red fishermen’s cabins, or rorbuer, line the water’s edge, creating a postcard-perfect scene. These villages, nestled between towering mountains and the ocean, offer a glimpse into Lofoten's rich maritime history.</p>
+            <br>
+            <div class="image-gallery">
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/fishervillage_house_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/fishervillage_house_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/fishervillage_house.jpeg" alt="Fishermens cabin" class="portrait">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/fishervillage_sea_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/fishervillage_sea_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/fishervillage_sea.jpeg" alt="Sea and mountain" class="portrait">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/fishervillage_boats_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/fishervillage_boats_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/fishervillage_boats.jpeg" alt="Fishervillage with boats" class="portrait">
+                </picture>
+            </div>
+            <br><br>
+            <h3>Starry Skies and Northern Lights</h3>
+            <p>One of the most magical moments of our trip was witnessing the night sky in Lofoten. The clear, dark skies were dotted with countless stars, and to our amazement, we even caught a glimpse of the <a href="https://www.norway-lights.com/destinations/lofoten/611ed37900c8b87521bcaa27/" target="_blank" aria-label="Website for Northern Lights Forecast">Northern Lights</a>. The ethereal green glow dancing across the sky made for an unforgettable experience, adding a touch of magic to our hiking adventure.</p>
+            <br>
+            <div class="image-gallery">
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/polarlights_1_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/polarlights_1_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/polarlights_1.jpeg" alt="Polarlights" class="landscape">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/starry_skies_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/starry_skies_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/starry_skies.jpeg" alt="Starry Skie" class="landscape">
+                </picture>
+
+                <picture>
+                    <!-- large version for desktops and large screens -->
+                    <source srcset="media/images/polarlights_2_large.webp" type="image/webp" media="(min-width: 800px)"> 
+                    <!-- small version for mobile phones and small screens -->
+                    <source srcset="media/images/polarlights_2s_small.webp" type="image/webp" media="(max-width: 799px)">
+                    <!-- in case that the browser doesn't support WebP -->
+                     <img src="media/images/polarlights_2.jpeg" alt="Polarlights" class="landscape">
+                </picture>
+            </div>
     </main>
+
     <footer>
         <p>&copy; 2024 OsloMet</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
