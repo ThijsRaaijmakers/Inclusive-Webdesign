@@ -75,6 +75,7 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Make links bold black with yellow underline */
 a {
     color: black;
     background-color: transparent;
@@ -111,50 +112,48 @@ section > div {
     max-width: 860px;
 }
 
-.accordion {
-    background-color: #f4f4f4;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-
-.accordion:after {
-    background-color: #ffd500;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    content: '+';
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    float: left;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.active:after {
-    content: "-";
-}
-
-.panel {
-    padding: 0 18px;
-    background-color: #f4f4f4;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
 footer {
     text-align: center;
     margin-top: 20px;
-    color: #555;
+    background-color: #ffd500;
+    color: #000000;
+}
+
+.newsletter {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.newsletter-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #000; /* Black background for the button */
+    text-align: center;
+    border-radius: 8px;
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.footer-links {
+    list-style-type: none;
+    text-align: left;
+}
+
+.social-media-links {
+    list-style-type: none;
+    text-align: left;
 }
 
 
@@ -220,6 +219,75 @@ div[role="rowgroup"], .table-row {
     margin-top: 20px;
 }
 
+.supervisor-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between the image and the text */
+}
+
+.supervisor-info img {
+    width: 90px;
+    height: 120px;
+}
+
+.supervisor-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-stories {
+    width: 100vw; /* Full viewport width */
+    max-width: none; /* Remove any max-width constraint */
+    margin-left: calc(50% - 50vw); /* Center the section by offsetting half the viewport width */
+    padding: 20px;
+}
+
+.story-block {
+    width: 100%; /* Full width of the parent container */
+    max-width: 1200px; /* Or a different max-width you prefer */
+    margin: 0 auto; /* Center it */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #ffd500;
+    border-radius: 8px;
+}
+
+.story-content {
+    background-color: #ffd500;
+    color: #000;
+    padding: 20px;
+    flex: 1; /* This allows the content area to take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.story-image {
+    width: 600px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.more-stories-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.more-stories {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffd500; /* Yellow background for the button */
+    text-align: center;
+    border-radius: 8px;
+    color: #000; /* Text color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 
 /* Tablet */
@@ -239,4 +307,3 @@ div[role="rowgroup"], .table-row {
     }
     
 }
-
