@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Load GPX file in Offersøykammen map
     console.log("Loading GPX file for Offersøykammen...");
-    new L.GPX("media/gpx/Offersøykammen.gpx", {
+    new L.GPX("https://raw.githubusercontent.com/thijsraaijmakers/Inclusive-Webdesign/main/media/gpx/Offers%C3%B8ykammen.gpx", {
         async: true,
         marker_options: {
-            startIconUrl: '',
-            endIconUrl: '',
-            shadowUrl: ''
+            startIconUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-icon-start.png',
+            endIconUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-icon-end.png',
+            shadowUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-shadow.png'
         }
     }).on('loaded', function(e) {
         console.log("Offersøykammen GPX loaded.");
@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Load GPX file in Djevelporten map
     console.log("Loading GPX file for Djevelporten...");
-    new L.GPX("media/gpx/Djevelporten_Fløya.gpx", {
+    new L.GPX("https://raw.githubusercontent.com/thijsraaijmakers/Inclusive-Webdesign/main/media/gpx/Djevelporten_Fløya.gpx", {
         async: true,
         marker_options: {
-            startIconUrl: '',
-            endIconUrl: '',
-            shadowUrl: ''
+            startIconUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-icon-start.png',
+            endIconUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-icon-end.png',
+            shadowUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-shadow.png'
         }
     }).on('loaded', function(e) {
         console.log("Djevelporten GPX loaded.");
@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Load GPX file in Ryten
     console.log("Loading GPX file for Ryten...");
-    new L.GPX("media/gpx/Ryten.gpx", {
+    new L.GPX("https://raw.githubusercontent.com/thijsraaijmakers/Inclusive-Webdesign/main/media/gpx/Ryten.gpx", {
         async: true,
         marker_options: {
-            startIconUrl: '',
-            endIconUrl: '',
-            shadowUrl: ''
+            startIconUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-icon-start.png',
+            endIconUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-icon-end.png',
+            shadowUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-shadow.png'
         }
     }).on('loaded', function(e) {
         console.log("Ryten GPX loaded.");
