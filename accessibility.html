@@ -1,34 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessibility - OsloMet</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Accessibility</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="activity.html">Activity</a></li>
-                <li><a>Accessibility</a></li>
-                <li><a href="github.html">GitHub</a></li>
-            </ul>
-        </nav>
+      <h1>Accessibility</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="activity.html">Activity</a></li>
+          <li><a>Accessibility</a></li>
+          <li><a href="github.html">GitHub</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section>
-            <div>
-                <p>Test</p>
+      <!-- Introduction to the accessibility page-->
+      <div class="accessibility-page">
+        <h2>Introduction</h2>
+        <p>
+          We tested the website's accessibility using Google Lighthouse, a
+          feature integrated into the developer tools of Google Chrome. The
+          results are presented and discussed on this page. Additionally, we
+          manually checked the site for accessibility errors and non-compliances
+          and reviewed our universal design choices to ensure they meet the
+          accessibility standards.
+        </p>
+      </div>
+      <!-- Lighthouse results for the index page -->
+      <div class="accessibility-page">
+        <h2>Google Lighthouse Results for the Index Page</h2>
+        <img
+          src="media/images/accessibility_score_index.png"
+          alt="Google Lighthouse accessibility score index.html"
+        />
 
+        <p>
+          The accessibility review identifies several issues. First, certain
+          elements with ARIA roles are missing required child elements, which
+          may hinder effective interpretation by assistive technologies like
+          screen readers. This oversight presents an opportunity to improve ARIA
+          usage, enhancing accessibility for users who rely on these cues.
+          Additionally, lists contain elements that are not strictly
+          <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code>, or
+          <code>&lt;template&gt;</code>, potentially disrupting the structure
+          and readability for screen readers when navigating tabular or list
+          data. Another issue noted is that the heading elements are not in
+          sequential order, which can affect the logical navigation flow,
+          particularly for keyboard and screen reader users. Finally, some video
+          elements lack <code>&lt;track&gt;</code> elements for captions, which
+          limits accessibility for users with hearing impairments. Addressing
+          these issues would help provide a more inclusive experience, allowing
+          all users to interact more easily with the content.
+        </p>
 
-            </div>
-        </section>
+        <img src="media/images/errors_index.png" alt="Errors index.html" />
+        <p>Positive aspects include:</p>
+        <ul>
+          <li>ARIA attributes were correctly used and valid.</li>
+          <li>
+            Images contained descriptive <code>alt</code> attributes, improving
+            screen reader accessibility.
+          </li>
+          <li>
+            Background and foreground colors had sufficient contrast, making
+            text readable for users with low vision.
+          </li>
+        </ul>
+      </div>
+      <!-- Lighthouse results for the activity page -->
+      <div class="accessibility-page">
+        <h2>Google Lighthouse Results for the Activity Page</h2>
+        <img
+          src="media/images/accessibility_score_activity.png"
+          alt="Google Lighthouse accessibility score activity.html"
+        />
+
+        <p>
+          The accessibility review highlights an issue with touch targets that
+          do not have sufficient size or spacing. This can impact users who rely
+          on touch devices, particularly those with motor impairments, as small
+          or closely spaced touch targets can be difficult to tap accurately.
+          The touch targets highlight our start and end point for the hikes we
+          did, so they are pretty close to each other. This is why the error
+          occurs. Because of that, we won't make changes for the accessibility
+          here.
+        </p>
+
+        <img
+          src="media/images/errors_activity.png"
+          alt="Errors activity.html"
+        />
+        <p>Positive Results:</p>
+        <ul>
+          <li>ARIA roles and attributes were valid and correctly used.</li>
+          <li>Proper contrast between text and background.</li>
+          <li>
+            Images had descriptive <code>alt</code> attributes, supporting
+            visually impaired users.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Universal design explanation -->
+      <div class="accessibility-page">
+        <h2>Universal Design Choices for Accessibility</h2>
+        <p>
+          In developing this website, we applied several universal design
+          principles to make it accessible to as many users as possible,
+          including those with disabilities. While automated tools like Google
+          Lighthouse helped identify some accessibility issues, they couldn’t
+          catch everything. Therefore, our approach combined automated testing
+          with specific design choices aimed at improving the user experience
+          beyond what automated tests can detect.
+        </p>
+
+        <h3>Semantic HTML Structure</h3>
+        <p>
+          We used semantic HTML tags like <code>&lt;header&gt;</code>,
+          <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and
+          <code>&lt;footer&gt;</code> to help assistive technologies understand
+          the structure of the page. For example, the header contains the site’s
+          main navigation, providing a clear starting point for screen readers
+          and enhancing keyboard navigation:
+        </p>
+        <pre>
+    &lt;header&gt;
+        &lt;h1&gt;Hiking Adventures&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a&gt;Activity&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="accessibility.html"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="github.html"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+        </pre>
+
+        <h3>Alternative Text for Images</h3>
+        <p>
+          All images include descriptive <code>alt</code> attributes, which
+          provides context for screen reader users. This approach is crucial for
+          users who cannot see the images but rely on descriptions to understand
+          visual content. For example, on the activity page, an image showing a
+          view from Offersøykammen includes descriptive alt text:
+        </p>
+        <pre>
+    &lt;img src="media/images/offersøykammen_view.jpeg" alt="View from Offersøykammen" class="landscape"&gt;
+        </pre>
+        <p>
+          This <code>alt</code> text allows visually impaired users to
+          understand the image’s content, enhancing the overall experience.
+        </p>
+
+        <h3>High Contrast and Readable Colors</h3>
+        <p>
+          We ensured high contrast between text and background colors to improve
+          readability for users with low vision. The header uses a yellow
+          background with black text to provide strong contrast, which meets
+          accessibility standards:
+        </p>
+        <pre>
+    header {
+        background-color: #ffd500; /* Yellow background */
+        color: black; /* Black text */
+        padding: 10px;
+    }
+        </pre>
+        <p>
+          This color scheme makes the text more readable and accessible to users
+          with various visual impairments.
+        </p>
+
+        <h3>Responsive Design for Various Devices</h3>
+        <p>
+          We implemented responsive design using media queries, allowing the
+          website to adapt to different screen sizes. This is particularly
+          beneficial for users on mobile devices, as it ensures readability and
+          accessibility. For example, the font size and layout adjust
+          automatically for smaller screens:
+        </p>
+        <pre>
+    @media screen and (min-width: 768px) {
+        .table-row div {
+            min-height: 60px; 
+        }
+    }
+        </pre>
+        <p>
+          This approach makes the content flexible and accessible on both large
+          screens and small mobile devices.
+        </p>
+
+        <h3>Accessible Link Text and ARIA Labels</h3>
+        <p>
+          For external links, we included <code>aria-label</code> attributes to
+          provide context, particularly for links that open in new tabs. This
+          allows screen reader users to understand where each link leads. For
+          example, a link to the Lofoten tourism website includes an ARIA label
+          to clarify its purpose:
+        </p>
+        <pre>
+    &lt;a href="https://visitlofoten.com/en/" target="_blank" aria-label="Official website of the Lofoten Islands"&gt;Lofoten&lt;/a&gt;
+        </pre>
+        <p>
+          This <code>aria-label</code> helps users understand the destination of
+          the link, improving accessibility for users with visual impairments.
+        </p>
+
+        <h3>Consistent Heading Structure</h3>
+        <p>
+          To create a logical content hierarchy, we used a consistent heading
+          structure across the pages. This helps screen reader users and
+          keyboard navigation users understand the flow and importance of
+          content. On the activity page, for example, we start with a
+          <code>&lt;h1&gt;</code> for the main title, followed by
+          <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> tags to structure
+          the content in descending order:
+        </p>
+        <pre>
+    &lt;h1&gt;Our Hiking Adventure in Lofoten&lt;/h1&gt;
+    &lt;h2&gt;Hiking trails we explored&lt;/h2&gt;
+    &lt;h3&gt;Offersøykammen Trail&lt;/h3&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;h3&gt;Djevelporten and Fløya Trail&lt;/h3&gt;
+    &lt;p&gt;...&lt;/p&gt;
+        </pre>
+        <p>
+          This consistent hierarchy helps users navigate through the content
+          efficiently, especially those using screen readers or other assistive
+          technologies.
+        </p>
+
+        <h3>Summary</h3>
+        <p>
+          By combining semantic HTML, alternative text for images, high-contrast
+          colors, responsive design, ARIA labels, and consistent heading
+          structure, we enhanced accessibility on multiple fronts. While
+          automated testing tools like Lighthouse provided valuable guidance,
+          our manual adjustments ensured a more inclusive design, meeting
+          universal design standards and creating a more user-friendly
+          experience for all visitors.
+        </p>
+      </div>
+
+      <!-- Reflection -->
+      <div class="accessibility-page">
+        <h2>Reflection</h2>
+        <p>
+          Automated testing with Lighthouse provided valuable insights but could
+          not detect every accessibility concern. For example, while it did flag
+          small touch targets, manual checks were needed to ensure that the tab
+          order was logical and keyboard-friendly. We also manually reviewed the
+          heading order to ensure a consistent hierarchy, which improves screen
+          reader navigation. This blend of automated and manual testing
+          confirmed that our site meets universal design standards, offering a
+          more inclusive and user-friendly experience.
+        </p>
+      </div>
     </main>
     <footer>
-        <p>&copy; 2024 OsloMet</p>
+      <p>&copy; 2024 OsloMet</p>
     </footer>
-</body>
+  </body>
 </html>
