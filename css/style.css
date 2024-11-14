@@ -146,6 +146,11 @@ footer {
     text-align: left;
 }
 
+.contact-university-name {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
 .footer-links {
     list-style-type: none;
     text-align: left;
