@@ -71,6 +71,118 @@
             text readable for users with low vision.
           </li>
         </ul>
+        <!-- Fixes we took for the index page errors -->
+        <h3>Errors and Fixes</h3>
+        <h4>Tables and Lists</h4>
+        <p>
+          To address the issue, we identified that the
+          <code>&lt;li&gt;</code> closing tags (<code>&lt;/li&gt;</code>) were
+          incorrectly placed in the middle of the list items, causing the
+          <code>&lt;a&gt;</code> links to be technically outside their
+          respective list items. This disrupted the semantic structure of the
+          HTML, making it less accessible and incorrectly formatted.
+        </p>
+
+        <p>
+          <strong>Fix:</strong> We removed the misplaced
+          <code>&lt;/li&gt;</code> tags from the middle of each list item and
+          ensured that the <code>&lt;a&gt;</code> tags were nested correctly
+          within their respective <code>&lt;li&gt;</code> elements. This
+          restored the proper structure, where each
+          <code>&lt;li&gt;</code> fully encapsulates the link
+          (<code>&lt;a&gt;</code>).
+        </p>
+        <p><strong>Before:</strong></p>
+        <pre>
+<code>
+&lt;ul class="social-media-links"&gt;
+  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://www.facebook.com/oslomet/"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://twitter.com/OsloMet"&gt;X (Twitter)&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://no.linkedin.com/school/oslomet/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://www.instagram.com/oslomet/?hl=nb"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</pre>
+
+        <p><strong>After:</strong></p>
+        <pre>
+<code>
+&lt;ul class="social-media-links"&gt;
+  &lt;li class="social-media-link"&gt;&lt;a href="https://www.facebook.com/oslomet/"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="social-media-link"&gt;&lt;a href="https://twitter.com/OsloMet"&gt;X (Twitter)&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="social-media-link"&gt;&lt;a href="https://no.linkedin.com/school/oslomet/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="social-media-link"&gt;&lt;a href="https://www.instagram.com/oslomet/?hl=nb"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</pre>
+
+        <p>
+          <strong>Summary:</strong> This fix ensures proper semantic HTML
+          structure and improves accessibility and functionality. Each
+          <code>&lt;li&gt;</code> now correctly encapsulates its associated
+          <code>&lt;a&gt;</code> tag, maintaining the integrity of the list.
+        </p>
+        <h4>Navigation</h4>
+        <p>
+          Before, the title "OSLO METROPOLITAN UNIVERSITY" was set as a
+          <code>&lt;h3&gt;</code> header, which was semantically incorrect since
+          it was not meant to act as a header but rather as regular text with
+          additional styling. To fix this, we changed the
+          <code>&lt;h3&gt;</code> to a <code>&lt;p&gt;</code> element and added
+          a specific class to target it for styling in the CSS.
+        </p>
+
+        <p>
+          <strong>Fix:</strong> Changed the element to
+          <code>&lt;p&gt;</code> with a class name, ensuring semantic HTML usage
+          and allowing us to apply styling through the CSS file.
+        </p>
+
+        <p><strong>Example:</strong></p>
+
+        <p><strong>Before:</strong></p>
+        <pre>
+          <code>
+          &lt;div class="contact-info"&gt;
+            &lt;h3&gt;&lt;b&gt;OSLO METROPOLITAN UNIVERSITY&lt;/b&gt;&lt;/h3&gt;
+            &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
+            &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
+            &lt;p&gt;0500 Oslo&lt;/p&gt;
+            &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
+          &lt;/div&gt;
+          </code>
+          </pre>
+
+        <p><strong>After:</strong></p>
+        <pre>
+          <code>
+          &lt;div class="contact-info"&gt;
+            &lt;p class="contact-university-name"&gt;OSLO METROPOLITAN UNIVERSITY&lt;/p&gt;
+            &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
+            &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
+            &lt;p&gt;0500 Oslo&lt;/p&gt;
+            &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
+          &lt;/div&gt;
+          </code>
+          </pre>
+
+        <p>
+          <strong>CSS:</strong> A specific class was added in the stylesheet to
+          style the <code>&lt;p&gt;</code> element as needed:
+        </p>
+        <pre>
+          <code>
+          .contact-university-name {
+            font-weight: bold;
+            font-size: 1.3rem;
+          }
+          </code>
+          </pre>
+
+        <p>
+          This change ensures semantic correctness while maintaining flexibility
+          for styling through CSS.
+        </p>
       </div>
       <!-- Lighthouse results for the activity page -->
       <div class="accessibility-page">
