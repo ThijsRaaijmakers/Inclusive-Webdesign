@@ -187,9 +187,9 @@ video {
 
 /* EXPLAINN THIS MORE IN NORMAL TERMS AND WHY AND HOW -- STAN */
 div[role="rowgroup"], .table-row {
-    display: contents; /* Allow each item to be part of the main grid */
+    display: contents; /* Essentially makes it so the div doesn't exist visually */
 }
-
+/* Visual styling of an actual table-row */
 .table-row div {
     padding: 4px;
     border-color: black;
@@ -199,7 +199,7 @@ div[role="rowgroup"], .table-row {
     font-weight: normal;
     min-height: 90px;
 }
-
+/* The text inside the tables */
 .table-row div p {
     font-size: 1em; /* Adjust to desired size */
     font-weight: normal; /* Override any bold inherited from h4 or h5 */
