@@ -240,24 +240,6 @@ div[role="rowgroup"], .table-row {
     flex-direction: column;
 }
 
-.student-stories {
-    width: 100vw; /* Full viewport width */
-    max-width: none; /* Remove any max-width constraint */
-    margin-left: calc(50% - 50vw); /* Center the section by offsetting half the viewport width */
-    padding: 20px;
-}
-
-.story-block {
-    width: 100%; /* Full width of the parent container */
-    max-width: 1200px; /* Or a different max-width you prefer */
-    margin: 0 auto; /* Center it */
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    background-color: #ffd500;
-    border-radius: 8px;
-}
-
 .story-content {
     background-color: #ffd500;
     color: #000;
@@ -267,12 +249,6 @@ div[role="rowgroup"], .table-row {
     flex-direction: column;
     justify-content: center;
     max-width: 600px;
-    border-radius: 5px;
-}
-
-.story-image {
-    width: 600px;
-    height: 300px;
     border-radius: 5px;
 }
 
