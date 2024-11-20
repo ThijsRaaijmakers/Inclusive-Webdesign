@@ -124,7 +124,9 @@ footer {
 }
 
 .newsletter-button {
-    display: inline-block;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     padding: 15px 30px;
     background-color: #000; /* Black background for the button */
     text-align: center;
@@ -132,7 +134,9 @@ footer {
     color: #fff; /* Text color */
     text-decoration: none;
     font-weight: bold;
+    width: fit-content; /* Ensure the button width adapts to its content */
 }
+
 
 .contact {
     display: flex;
