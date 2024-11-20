@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accessibility - OsloMet</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  
-  <body>
-    <header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility - OsloMet</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div>
+      <p>Accessibility</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="activity.html">Activity</a></li>
+          <li><a>Accessibility</a></li>
+          <li><a href="github.html">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section>
       <div>
-        <p>Accessibility</p>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="activity.html">Activity</a></li>
-            <li><a>Accessibility</a></li>
-            <li><a href="github.html">GitHub</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <!-- Introduction to the accessibility page-->
-      <div class="accessibility-page">
         <h1>Accessibility</h1>
         <h2>Introduction</h2>
         <p>
@@ -35,14 +36,11 @@
           accessibility standards.
         </p>
       </div>
-      <!-- Lighthouse results for the index page -->
-      <div class="accessibility-page">
+    </section>
+    <section>
+      <div>
         <h2>Google Lighthouse Results for the Index Page</h2>
-        <img
-          src="media/images/accessibility_score_index.png"
-          alt="Google Lighthouse accessibility score index.html"
-        />
-
+        <!-- <img src="media/images/accessibility_score_index.png" alt="Google Lighthouse accessibility score index.html" /> -->
         <p>
           The accessibility review identifies several issues. First, certain
           elements with ARIA roles are missing required child elements, which
@@ -61,7 +59,7 @@
           these issues would help provide a more inclusive experience, allowing
           all users to interact more easily with the content.
         </p>
-
+<!-- 
         <img src="media/images/errors_index.png" alt="Errors index.html" />
         <p>Positive aspects include:</p>
         <ul>
@@ -75,7 +73,6 @@
             text readable for users with low vision.
           </li>
         </ul>
-        <!-- Fixes we took for the index page errors -->
         <h3>Errors and Fixes</h3>
         <h4>Tables and Lists</h4>
         <p>
@@ -86,7 +83,6 @@
           respective list items. This disrupted the semantic structure of the
           HTML, making it less accessible and incorrectly formatted.
         </p>
-
         <p>
           <strong>Fix:</strong> We removed the misplaced
           <code>&lt;/li&gt;</code> tags from the middle of each list item and
@@ -106,7 +102,7 @@
   &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://www.instagram.com/oslomet/?hl=nb"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code>
-</pre>
+        </pre>
 
         <p><strong>After:</strong></p>
         <pre>
@@ -146,50 +142,52 @@
 
         <p><strong>Before:</strong></p>
         <pre>
-          <code>
-          &lt;div class="contact-info"&gt;
-            &lt;h3&gt;&lt;b&gt;OSLO METROPOLITAN UNIVERSITY&lt;/b&gt;&lt;/h3&gt;
-            &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
-            &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
-            &lt;p&gt;0500 Oslo&lt;/p&gt;
-            &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
-          &lt;/div&gt;
-          </code>
-          </pre>
+<code>
+&lt;div class="contact-info"&gt;
+  &lt;h3&gt;&lt;b&gt;OSLO METROPOLITAN UNIVERSITY&lt;/b&gt;&lt;/h3&gt;
+  &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
+  &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
+  &lt;p&gt;0500 Oslo&lt;/p&gt;
+  &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
 
         <p><strong>After:</strong></p>
         <pre>
-          <code>
-          &lt;div class="contact-info"&gt;
-            &lt;p class="contact-university-name"&gt;OSLO METROPOLITAN UNIVERSITY&lt;/p&gt;
-            &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
-            &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
-            &lt;p&gt;0500 Oslo&lt;/p&gt;
-            &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
-          &lt;/div&gt;
-          </code>
-          </pre>
+<code>
+&lt;div class="contact-info"&gt;
+  &lt;p class="contact-university-name"&gt;OSLO METROPOLITAN UNIVERSITY&lt;/p&gt;
+  &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
+  &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
+  &lt;p&gt;0500 Oslo&lt;/p&gt;
+  &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
 
         <p>
           <strong>CSS:</strong> A specific class was added in the stylesheet to
           style the <code>&lt;p&gt;</code> element as needed:
         </p>
         <pre>
-          <code>
-          .contact-university-name {
-            font-weight: bold;
-            font-size: 1.3rem;
-          }
-          </code>
-          </pre>
+<code>
+.contact-university-name {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+</code>
+</pre>
 
         <p>
           This change ensures semantic correctness while maintaining flexibility
           for styling through CSS.
-        </p>
+        </p> -->
       </div>
-      <!-- Lighthouse results for the activity page -->
-      <div class="accessibility-page">
+    </section>
+    <!-- Introduction to the accessibility page-->
+    <section>
+      <div>
         <h2>Google Lighthouse Results for the Activity Page</h2>
         <picture>
           <!-- <source srcset="media/images/polarlights_2_large.webp" type="image/webp" media="(min-width: 800px)"> 
@@ -226,9 +224,9 @@
           </li>
         </ul>
       </div>
-
-      <!-- Universal design explanation -->
-      <div class="accessibility-page">
+    </section>
+    <section>
+      <div>
         <h2>Universal Design Choices for Accessibility</h2>
         <p>
           In developing this website, we applied several universal design
@@ -369,9 +367,9 @@
           experience for all visitors.
         </p>
       </div>
-
-      <!-- Reflection -->
-      <div class="accessibility-page">
+    </section>
+    <section>
+      <div>
         <h2>Reflection</h2>
         <p>
           Automated testing with Lighthouse provided valuable insights but could
@@ -384,9 +382,11 @@
           more inclusive and user-friendly experience.
         </p>
       </div>
-    </main>
-    <footer>
-      <p>&copy; 2024 OsloMet</p>
-    </footer>
-  </body>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 OsloMet</p>
+  </footer>
+</body>
+
 </html>
