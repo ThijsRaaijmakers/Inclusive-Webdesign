@@ -337,6 +337,7 @@ body.activity-page .image-gallery picture {
     width: calc(33.333% - 20px); /* three images evenly next to each other */
     max-width: 100%;
 }
+
 body.activity-page .image-gallery img {
     width: 100%; /* Images fill the width of the container */
     height: auto; /* automatically adjust height based on image ratio */
@@ -399,4 +400,18 @@ body.activity-page #map-ryten {
 
 }
 
+.github-image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
 
+.github-image-gallery img {
+    max-width: 90%; /* Ensure images scale well */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
