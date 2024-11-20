@@ -318,7 +318,7 @@ body.activity-page main a {
 }
 
 body.activity-page header {
-    background-color: rgb(136, 223, 243);
+    background-color: #88DFF3;
 }
 
 body.activity-page ul {
@@ -326,9 +326,9 @@ body.activity-page ul {
 }
 
     body.activity-page main a {
-        color: rgb(136, 223, 243); 
+        color: #88DFF3; 
         text-decoration: underline; 
-        text-decoration-color: rgb(136, 223, 243); 
+        text-decoration-color: #88DFF3; 
     }
 
 body.activity-page .image-gallery {
@@ -377,6 +377,21 @@ body.activity-page #map-ryten {
     overflow: hidden;
 }
 
+footer.activity-page-footer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #88DFF3;
+    color: #000000;
+}
+
+footer.activity-page-footer a {
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
+
 .github-image-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -397,5 +412,5 @@ body.activity-page #map-ryten {
     overflow-x:  scroll;
     white-space: nowrap;
     width: 100%;
-    background-color: rgb(237, 235, 235);
+    background-color: #EDEBEB;
 }
