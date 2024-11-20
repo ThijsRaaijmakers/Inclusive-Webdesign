@@ -103,9 +103,7 @@ section {
     justify-content: center;
 }
 
-section > div {
-    max-width: 860px;
-}
+
 
 
 .faq {
@@ -276,6 +274,10 @@ div[role="rowgroup"], .table-row {
     .table-row div {
         min-height: 60px; 
     }
+    section > div {
+        width: 860px;
+        max-width: 860px !important;
+    }
     
 }
 /* Desktop */
@@ -283,10 +285,11 @@ div[role="rowgroup"], .table-row {
     .table-row div {
         min-height: 20px; 
     }
-    section > div {
-        width: 860px;
-    }
+
     
+}
+section > div {
+    max-width: 300px;
 }
 /* Specific style for the activity page */
 body.activity-page {
@@ -384,4 +387,11 @@ body.activity-page #map-ryten {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.codeblock {
+    overflow-x:  scroll;
+    white-space: nowrap;
+    width: 100%;
+    background-color: lightgray;
 }
