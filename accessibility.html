@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accessibility - OsloMet</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  
-  <body>
-    <header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility - OsloMet</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div>
+      <p>Accessibility</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="activity.html">Activity</a></li>
+          <li><a>Accessibility</a></li>
+          <li><a href="github.html">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section>
       <div>
-        <p>Accessibility</p>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="activity.html">Activity</a></li>
-            <li><a>Accessibility</a></li>
-            <li><a href="github.html">GitHub</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <!-- Introduction to the accessibility page-->
-      <div class="accessibility-page">
         <h1>Accessibility</h1>
         <h2>Introduction</h2>
         <p>
@@ -35,14 +36,17 @@
           accessibility standards.
         </p>
       </div>
-      <!-- Lighthouse results for the index page -->
-      <div class="accessibility-page">
+    </section>
+    <section>
+      <div>
         <h2>Google Lighthouse Results for the Index Page</h2>
-        <img
-          src="media/images/accessibility_score_index.png"
-          alt="Google Lighthouse accessibility score index.html"
-        />
+        <div class="github-image-gallery">
+          <picture>
 
+            <img src="media/images/accessibility_score_index.png"
+              alt="Google Lighthouse accessibility score index.html" />
+          </picture>
+        </div>
         <p>
           The accessibility review identifies several issues. First, certain
           elements with ARIA roles are missing required child elements, which
@@ -61,8 +65,11 @@
           these issues would help provide a more inclusive experience, allowing
           all users to interact more easily with the content.
         </p>
-
-        <img src="media/images/errors_index.png" alt="Errors index.html" />
+        <div class="github-image-gallery">
+          <picture>
+            <img src="media/images/errors_index.png" alt="Errors index.html" />
+          </picture>
+        </div>
         <p>Positive aspects include:</p>
         <ul>
           <li>ARIA attributes were correctly used and valid.</li>
@@ -75,7 +82,6 @@
             text readable for users with low vision.
           </li>
         </ul>
-        <!-- Fixes we took for the index page errors -->
         <h3>Errors and Fixes</h3>
         <h4>Tables and Lists</h4>
         <p>
@@ -86,7 +92,6 @@
           respective list items. This disrupted the semantic structure of the
           HTML, making it less accessible and incorrectly formatted.
         </p>
-
         <p>
           <strong>Fix:</strong> We removed the misplaced
           <code>&lt;/li&gt;</code> tags from the middle of each list item and
@@ -97,28 +102,36 @@
           (<code>&lt;a&gt;</code>).
         </p>
         <p><strong>Before:</strong></p>
-        <pre>
-<code>
-&lt;ul class="social-media-links"&gt;
-  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://www.facebook.com/oslomet/"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://twitter.com/OsloMet"&gt;X (Twitter)&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://no.linkedin.com/school/oslomet/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://www.instagram.com/oslomet/?hl=nb"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code>
-</pre>
+        <div>
+          <div class="codeblock">
+            <pre>
+              <code>
+              &lt;ul class="social-media-links"&gt;
+                &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://www.facebook.com/oslomet/"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://twitter.com/OsloMet"&gt;X (Twitter)&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://no.linkedin.com/school/oslomet/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="social-media-link"&gt;&lt;/li&gt;&lt;a href="https://www.instagram.com/oslomet/?hl=nb"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+              </code></pre>
+          </div>
+
+        </div>
+
+
 
         <p><strong>After:</strong></p>
-        <pre>
-<code>
-&lt;ul class="social-media-links"&gt;
-  &lt;li class="social-media-link"&gt;&lt;a href="https://www.facebook.com/oslomet/"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="social-media-link"&gt;&lt;a href="https://twitter.com/OsloMet"&gt;X (Twitter)&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="social-media-link"&gt;&lt;a href="https://no.linkedin.com/school/oslomet/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="social-media-link"&gt;&lt;a href="https://www.instagram.com/oslomet/?hl=nb"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code>
-</pre>
+        <div class="codeblock">
+          <pre>
+    <code>
+    &lt;ul class="social-media-links"&gt;
+      &lt;li class="social-media-link"&gt;&lt;a href="https://www.facebook.com/oslomet/"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="social-media-link"&gt;&lt;a href="https://twitter.com/OsloMet"&gt;X (Twitter)&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="social-media-link"&gt;&lt;a href="https://no.linkedin.com/school/oslomet/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="social-media-link"&gt;&lt;a href="https://www.instagram.com/oslomet/?hl=nb"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    </code>
+    </pre>
+        </div>
 
         <p>
           <strong>Summary:</strong> This fix ensures proper semantic HTML
@@ -145,61 +158,68 @@
         <p><strong>Example:</strong></p>
 
         <p><strong>Before:</strong></p>
-        <pre>
-          <code>
-          &lt;div class="contact-info"&gt;
-            &lt;h3&gt;&lt;b&gt;OSLO METROPOLITAN UNIVERSITY&lt;/b&gt;&lt;/h3&gt;
-            &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
-            &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
-            &lt;p&gt;0500 Oslo&lt;/p&gt;
-            &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
-          &lt;/div&gt;
-          </code>
-          </pre>
+        <div class="codeblock">
+          <pre>
+            <code>
+            &lt;div class="contact-info"&gt;
+              &lt;h3&gt;&lt;b&gt;OSLO METROPOLITAN UNIVERSITY&lt;/b&gt;&lt;/h3&gt;
+              &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
+              &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
+              &lt;p&gt;0500 Oslo&lt;/p&gt;
+              &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
+            &lt;/div&gt;
+            </code>
+            </pre>
+        </div>
 
         <p><strong>After:</strong></p>
-        <pre>
-          <code>
-          &lt;div class="contact-info"&gt;
-            &lt;p class="contact-university-name"&gt;OSLO METROPOLITAN UNIVERSITY&lt;/p&gt;
-            &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
-            &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
-            &lt;p&gt;0500 Oslo&lt;/p&gt;
-            &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
-          &lt;/div&gt;
-          </code>
-          </pre>
+        <div class="codeblock">
+          <pre>
+            <code>
+            &lt;div class="contact-info"&gt;
+              &lt;p class="contact-university-name"&gt;OSLO METROPOLITAN UNIVERSITY&lt;/p&gt;
+              &lt;p&gt;STORBYUNIVERSITETET&lt;/p&gt;
+              &lt;p&gt;PO 4, St. Olavs plass&lt;/p&gt;
+              &lt;p&gt;0500 Oslo&lt;/p&gt;
+              &lt;p&gt;Tel.: 67 23 50 00&lt;/p&gt;
+            &lt;/div&gt;
+            </code>
+            </pre>
+        </div>
 
         <p>
           <strong>CSS:</strong> A specific class was added in the stylesheet to
           style the <code>&lt;p&gt;</code> element as needed:
         </p>
-        <pre>
-          <code>
-          .contact-university-name {
-            font-weight: bold;
-            font-size: 1.3rem;
-          }
-          </code>
-          </pre>
+        <div class="codeblock">
+          <pre>
+    <code>
+    .contact-university-name {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    </code>
+    </pre>
+        </div>
 
         <p>
           This change ensures semantic correctness while maintaining flexibility
           for styling through CSS.
         </p>
       </div>
-      <!-- Lighthouse results for the activity page -->
-      <div class="accessibility-page">
+    </section>
+    <!-- Introduction to the accessibility page-->
+    <section>
+      <div>
         <h2>Google Lighthouse Results for the Activity Page</h2>
-        <picture>
-          <!-- <source srcset="media/images/polarlights_2_large.webp" type="image/webp" media="(min-width: 800px)"> 
-          <source srcset="media/images/polarlights_2s_small.webp" type="image/webp" media="(max-width: 799px)"> -->
-          <img
-            src="media/images/accessibility_score_activity.png"
-            alt="Google Lighthouse accessibility score activity.html"
-            class=""
-          />
-        </picture>
+        <div class="github-image-gallery">
+          <picture>
+            
+            <img src="media/images/accessibility_score_activity.png"
+              alt="Google Lighthouse accessibility score activity.html" />
+          </picture>
+
+        </div>
 
         <p>
           The accessibility review highlights an issue with touch targets that
@@ -211,11 +231,11 @@
           occurs. Because of that, we won't make changes for the accessibility
           here.
         </p>
-
-        <img
-          src="media/images/errors_activity.png"
-          alt="Errors activity.html"
-        />
+        <div class="github-image-gallery">
+          <picture>
+            <img src="media/images/errors_activity.png" alt="Errors activity.html" />
+          </picture>
+        </div>
         <p>Positive Results:</p>
         <ul>
           <li>ARIA roles and attributes were valid and correctly used.</li>
@@ -226,9 +246,9 @@
           </li>
         </ul>
       </div>
-
-      <!-- Universal design explanation -->
-      <div class="accessibility-page">
+    </section>
+    <section>
+      <div>
         <h2>Universal Design Choices for Accessibility</h2>
         <p>
           In developing this website, we applied several universal design
@@ -249,19 +269,22 @@
           main navigation, providing a clear starting point for screen readers
           and enhancing keyboard navigation:
         </p>
-        <pre>
-    &lt;header&gt;
-        &lt;h1&gt;Hiking Adventures&lt;/h1&gt;
-        &lt;nav&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a&gt;Activity&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="accessibility.html"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="github.html"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/nav&gt;
-    &lt;/header&gt;
-        </pre>
+        <div class="codeblock">
+          <pre>
+           <code>
+        &lt;header&gt;
+          &lt;h1&gt;Hiking Adventures&lt;/h1&gt;
+          &lt;nav&gt;
+              &lt;ul&gt;
+                  &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a&gt;Activity&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="accessibility.html"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="github.html"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/nav&gt;
+        &lt;/header&gt;
+           </code></pre>
+        </div>
 
         <h3>Alternative Text for Images</h3>
         <p>
@@ -271,9 +294,11 @@
           visual content. For example, on the activity page, an image showing a
           view from Offersøykammen includes descriptive alt text:
         </p>
-        <pre>
-    &lt;img src="media/images/offersøykammen_view.jpeg" alt="View from Offersøykammen" class="landscape"&gt;
-        </pre>
+        <div class="codeblock">
+          <pre>
+            &lt;img src="media/images/offersøykammen_view.jpeg" alt="View from Offersøykammen" class="landscape"&gt;
+                </pre>
+        </div>
         <p>
           This <code>alt</code> text allows visually impaired users to
           understand the image’s content, enhancing the overall experience.
@@ -286,13 +311,15 @@
           background with black text to provide strong contrast, which meets
           accessibility standards:
         </p>
-        <pre>
-    header {
-        background-color: #ffd500; /* Yellow background */
-        color: black; /* Black text */
-        padding: 10px;
-    }
-        </pre>
+        <div class="codeblock">
+          <pre>
+            header {
+                background-color: #ffd500; /* Yellow background */
+                color: black; /* Black text */
+                padding: 10px;
+            }
+                </pre>
+        </div>
         <p>
           This color scheme makes the text more readable and accessible to users
           with various visual impairments.
@@ -306,13 +333,16 @@
           accessibility. For example, the font size and layout adjust
           automatically for smaller screens:
         </p>
-        <pre>
-    @media screen and (min-width: 768px) {
-        .table-row div {
-            min-height: 60px; 
-        }
-    }
-        </pre>
+        <div class="codeblock">
+
+          <pre>
+      @media screen and (min-width: 768px) {
+          .table-row div {
+              min-height: 60px; 
+          }
+      }
+          </pre>
+        </div>
         <p>
           This approach makes the content flexible and accessible on both large
           screens and small mobile devices.
@@ -326,9 +356,11 @@
           example, a link to the Lofoten tourism website includes an ARIA label
           to clarify its purpose:
         </p>
+       <div class="codeblock">
         <pre>
-    &lt;a href="https://visitlofoten.com/en/" target="_blank" aria-label="Official website of the Lofoten Islands"&gt;Lofoten&lt;/a&gt;
-        </pre>
+          &lt;a href="https://visitlofoten.com/en/" target="_blank" aria-label="Official website of the Lofoten Islands"&gt;Lofoten&lt;/a&gt;
+              </pre>
+       </div>
         <p>
           This <code>aria-label</code> helps users understand the destination of
           the link, improving accessibility for users with visual impairments.
@@ -344,14 +376,16 @@
           <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> tags to structure
           the content in descending order:
         </p>
-        <pre>
-    &lt;h1&gt;Our Hiking Adventure in Lofoten&lt;/h1&gt;
-    &lt;h2&gt;Hiking trails we explored&lt;/h2&gt;
-    &lt;h3&gt;Offersøykammen Trail&lt;/h3&gt;
-    &lt;p&gt;...&lt;/p&gt;
-    &lt;h3&gt;Djevelporten and Fløya Trail&lt;/h3&gt;
-    &lt;p&gt;...&lt;/p&gt;
-        </pre>
+        <div class="codeblock">
+          <pre>
+            &lt;h1&gt;Our Hiking Adventure in Lofoten&lt;/h1&gt;
+            &lt;h2&gt;Hiking trails we explored&lt;/h2&gt;
+            &lt;h3&gt;Offersøykammen Trail&lt;/h3&gt;
+            &lt;p&gt;...&lt;/p&gt;
+            &lt;h3&gt;Djevelporten and Fløya Trail&lt;/h3&gt;
+            &lt;p&gt;...&lt;/p&gt;
+                </pre>
+        </div>
         <p>
           This consistent hierarchy helps users navigate through the content
           efficiently, especially those using screen readers or other assistive
@@ -369,9 +403,9 @@
           experience for all visitors.
         </p>
       </div>
-
-      <!-- Reflection -->
-      <div class="accessibility-page">
+    </section>
+    <section>
+      <div>
         <h2>Reflection</h2>
         <p>
           Automated testing with Lighthouse provided valuable insights but could
@@ -384,45 +418,47 @@
           more inclusive and user-friendly experience.
         </p>
       </div>
-    </main>
-    <footer>
-      <div class="newsletter">
-          <h1>Keep up to date with what is happening at OsloMet.</h1>
-          <a href="https://www.oslomet.no/nyhetsbrev" class="newsletter-button" aria-label="Subscribe to newsletter">
-              <p>Subscribe to our newsletter!</p>
-          </a>
-      </div>
-      <hr color="black">
-      <br /><br />
-      <div class="contact">
-          <div class="contact-info">
-              <p class="contact-university-name">OSLO METROPOLITAN UNIVERSITY</p>
-              <p>STORBYUNIVERSITETET</p>
-              <p>PO 4, St. Olavs plass</p>
-              <p>0500 Oslo</p>
-              <p>Tel.: 67 23 50 00</p>
-          </div>
-          <ul class="footer-links">
-              <li class="footer-link"><a href="https://www.oslomet.no/en">English</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/alumni">Alumni</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/ansatteoversikt">Employee overview</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/arrangement/arrangementsoversikt">Event overview</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/for-ansatte">For employees</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/for-studenter">For students</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/ledige-stillinger">Vacant positions</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/personvernerklering-informasjonskapslar">Privacy statement and cookies</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/pressekontakt">Press contact</a></li>
-              <li class="footer-link"><a href="https://www.oslomet.no/om/tilgjengelegheitserklering">Declaration of availability</a></li>
-              <li class="footer-link"><a href="https://www-admin.oslomet.no/admin/view/content/58148">Admin</a></li>
-          </ul>
-          <ul class="social-media-links">
-              <li class="social-media-link"><a href="https://www.facebook.com/oslomet/">Facebook</a></li>
-              <li class="social-media-link"><a href="https://twitter.com/OsloMet">X (Twitter)</a></li>
-              <li class="social-media-link"><a href="https://no.linkedin.com/school/oslomet/">LinkedIn</a></li>
-              <li class="social-media-link"><a href="https://www.instagram.com/oslomet/?hl=nb">Instagram</a></li>
-          </ul>
-      </div>
-      <br /><br />
-  </footer>
-  </body>
+    </section>
+  </main>
+  <footer>
+    <div class="newsletter">
+        <h1>Keep up to date with what is happening at OsloMet.</h1>
+        <a href="https://www.oslomet.no/nyhetsbrev" class="newsletter-button" aria-label="Subscribe to newsletter">
+            <p>Subscribe to our newsletter!</p>
+        </a>
+    </div>
+    <hr color="black">
+    <br /><br />
+    <div class="contact">
+        <div class="contact-info">
+            <p class="contact-university-name">OSLO METROPOLITAN UNIVERSITY</p>
+            <p>STORBYUNIVERSITETET</p>
+            <p>PO 4, St. Olavs plass</p>
+            <p>0500 Oslo</p>
+            <p>Tel.: 67 23 50 00</p>
+        </div>
+        <ul class="footer-links">
+            <li class="footer-link"><a href="https://www.oslomet.no/en">English</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/alumni">Alumni</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/ansatteoversikt">Employee overview</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/arrangement/arrangementsoversikt">Event overview</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/for-ansatte">For employees</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/for-studenter">For students</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/ledige-stillinger">Vacant positions</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/personvernerklering-informasjonskapslar">Privacy statement and cookies</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/pressekontakt">Press contact</a></li>
+            <li class="footer-link"><a href="https://www.oslomet.no/om/tilgjengelegheitserklering">Declaration of availability</a></li>
+            <li class="footer-link"><a href="https://www-admin.oslomet.no/admin/view/content/58148">Admin</a></li>
+        </ul>
+        <ul class="social-media-links">
+            <li class="social-media-link"><a href="https://www.facebook.com/oslomet/">Facebook</a></li>
+            <li class="social-media-link"><a href="https://twitter.com/OsloMet">X (Twitter)</a></li>
+            <li class="social-media-link"><a href="https://no.linkedin.com/school/oslomet/">LinkedIn</a></li>
+            <li class="social-media-link"><a href="https://www.instagram.com/oslomet/?hl=nb">Instagram</a></li>
+        </ul>
+    </div>
+    <br /><br />
+</footer>
+</body>
+
 </html>

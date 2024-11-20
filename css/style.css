@@ -397,5 +397,5 @@ body.activity-page #map-ryten {
     overflow-x:  scroll;
     white-space: nowrap;
     width: 100%;
-    background-color: lightgray;
+    background-color: rgb(237, 235, 235);
 }
