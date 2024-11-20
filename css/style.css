@@ -103,9 +103,7 @@ section {
     justify-content: center;
 }
 
-section > div {
-    max-width: 860px;
-}
+
 
 
 .faq {
@@ -126,7 +124,9 @@ footer {
 }
 
 .newsletter-button {
-    display: inline-block;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     padding: 15px 30px;
     background-color: #000; /* Black background for the button */
     text-align: center;
@@ -134,7 +134,9 @@ footer {
     color: #fff; /* Text color */
     text-decoration: none;
     font-weight: bold;
+    width: fit-content; /* Ensure the button width adapts to its content */
 }
+
 
 .contact {
     display: flex;
@@ -276,6 +278,10 @@ div[role="rowgroup"], .table-row {
     .table-row div {
         min-height: 60px; 
     }
+    section > div {
+        width: 860px;
+        max-width: 860px !important;
+    }
     
 }
 /* Desktop */
@@ -283,10 +289,11 @@ div[role="rowgroup"], .table-row {
     .table-row div {
         min-height: 20px; 
     }
-    section > div {
-        width: 860px;
-    }
+
     
+}
+section > div {
+    max-width: 300px;
 }
 /* Specific style for the activity page */
 body.activity-page {
@@ -311,7 +318,7 @@ body.activity-page main a {
 }
 
 body.activity-page header {
-    background-color: rgb(136, 223, 243);
+    background-color: #88DFF3;
 }
 
 body.activity-page ul {
@@ -319,9 +326,9 @@ body.activity-page ul {
 }
 
     body.activity-page main a {
-        color: rgb(136, 223, 243); 
+        color: #88DFF3; 
         text-decoration: underline; 
-        text-decoration-color: rgb(136, 223, 243); 
+        text-decoration-color: #88DFF3; 
     }
 
 body.activity-page .image-gallery {
@@ -337,6 +344,7 @@ body.activity-page .image-gallery picture {
     width: calc(33.333% - 20px); /* three images evenly next to each other */
     max-width: 100%;
 }
+
 body.activity-page .image-gallery img {
     width: 100%; /* Images fill the width of the container */
     height: auto; /* automatically adjust height based on image ratio */
@@ -369,34 +377,40 @@ body.activity-page #map-ryten {
     overflow: hidden;
 }
 
-.accessibility-page {
+footer.activity-page-footer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #88DFF3;
+    color: #000000;
+}
 
-    padding: 10px 0;
-    padding-left: 25%;
-    padding-right: 25%;
-    text-align: left;
+footer.activity-page-footer a {
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
+
+.github-image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.github-image-gallery img {
+    max-width: 90%; /* Ensure images scale well */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.codeblock {
+    overflow-x:  scroll;
+    white-space: nowrap;
     width: 100%;
-    display: block;
-
+    background-color: #EDEBEB;
 }
-
-.accessibility-page p {
-
-    padding: 10px 0;
-
-}
-
-.accessibility-page ul {
-
-    padding-left: 2%;
-
-}
-
-.accessibility-page img {
-
-    padding-top: 2%;
-    padding-bottom: 2%;
-
-}
-
-
